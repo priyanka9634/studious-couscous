@@ -31,7 +31,7 @@ export: code, rendered
 -- page:
 full-width: true
 
--- hero-section: The infrastructure of modern work
+-- hero-with-image: The infrastructure of modern work
 help-info: WorkTech
 image: $assets.files.static.hero.svg
 
@@ -43,6 +43,7 @@ logo-list: $common.list-of-logos
 
 -- feature-section: A new connection protocol for work
 help-info: Agency of Record
+image: $assets.files.static.record.svg
 
 Say goodbye to the old and outdated payroll system. Modern work demands a new employment protocol between talents and businesses. Ruul pioneers this revolutionary transformation.
 
@@ -88,11 +89,6 @@ pricing-list: $common.pricing-list
 
 Discover our smart worktech solutions and products designed to future-proof your work, and meet today's needs with ease.
 
--- faqs: Common questions
-help-info: HERE TO HELP
-cta-primary: Get Support
-cta-primary-link: index..html
-faqs-list: $common.list-of-faqs
 
 Find the answers to frequently asked questions here.
 
@@ -1259,7 +1255,7 @@ ftd.ui list hero:
 
 -- ftd.column:
 width: fill-container
-background.solid:$inherited.colors.background.base
+background.solid:$inherited.colors.background.step-1
 
 -- h.header:
 sections: $doc-page-mobile.sections
@@ -2051,6 +2047,7 @@ children container:
 background.solid: $inherited.colors.background.base
 color: $inherited.colors.text
 padding-vertical.px: 120
+padding-horizontal.px if { ftd.device == "mobile" }: 24
 width: fill-container
 
 -- ftd.column:
@@ -2064,6 +2061,7 @@ margin-bottom.px: 24
 style: medium
 
 -- ftd.row:
+if: { ftd.device != "mobile"}
 margin-bottom.px: 100
 spacing.fixed.px: 32
 
@@ -2081,12 +2079,41 @@ $work-section.body
 
 -- end: ftd.row
 
+-- ftd.column:
+margin-bottom.px: 100
+spacing.fixed.px: 32
+if: { ftd.device == "mobile"}
+
+-- ftd.text: $work-section.title
+role: $inherited.types.heading-hero
+width: fill-container
+style: medium
+
+-- ftd.text:
+role: $inherited.types.copy-regular
+width: fill-container
+margin-top.px: 12
+
+$work-section.body
+
+-- end: ftd.column
+
 -- ftd.row:
+if: { ftd.device != "mobile" }
 children: $work-section.container
 width: fill-container
 spacing.fixed.px: 68
 
 -- end: ftd.row
+
+-- ftd.column:
+if: { ftd.device == "mobile" }
+children: $work-section.container
+width: fill-container
+spacing.fixed.px: 68
+
+-- end: ftd.column
+
 
 -- end: ftd.column
 
@@ -2115,7 +2142,8 @@ body body:
 string list work-list:
 
 -- ftd.column:
-width.fixed.percent:48
+width.fixed.percent if { ftd.device != "mobile" }:48
+width: fill-container
 padding-vertical.px: 60
 padding-horizontal.px: 40
 background.solid: $inherited.colors.background.step-2
@@ -2206,7 +2234,8 @@ style: light
 caption title:
 
 -- ftd.row:
-width.fixed.percent: 45
+width.fixed.percent if { ftd.device != "mobile" }:45
+width: fill-container
 spacing.fixed.px: 4
 
 -- ftd.image: 
@@ -2353,32 +2382,21 @@ optional body body:
 common.logos list logo-list:
 
 -- ftd.column:
-width: fill-container
 spacing.fixed.px: 52
 padding-vertical.px: 60
-
--- ftd.column:
-spacing.fixed.px: 17
-
--- ftd.text:
-if: { logo-cloud-mobile.body != NULL }
-role: $inherited.types.copy-regular
-color: $inherited.colors.text
-
-$logo-cloud-mobile.body
-
--- end: ftd.column
-
--- ftd.column:
-spacing.fixed.px: 40
 width: fill-container
+
+-- ftd.row:
+spacing.fixed.px: 24
+width: fill-container
+wrap: true
 
 -- logo-lists:
 $loop$: $logo-cloud-mobile.logo-list as $obj
 logo: $obj.logo
 link: $obj.link
 
--- end: ftd.column
+-- end: ftd.row
 
 -- end: ftd.column
 
@@ -2400,16 +2418,19 @@ string link:
 boolean $mouse-in: false
 
 -- ftd.row:
-width if { ftd.device == "mobile"}: fill-container
 align-content: center
 padding-vertical.px: 32
 padding-horizontal.px: 64
-width.fixed.px: 260
+padding-vertical.px if { ftd.device == "mobile"}: 24
+padding-horizontal.px if { ftd.device == "mobile"}: 32
+width.fixed.percent: 44
+width.fixed.px if { ftd.device != "mobile"}: 260
 height.fixed.px: 128
+height.fixed.px if { ftd.device == "mobile"}: 78
 shadow: $common.logo-shadow
 $on-mouse-enter$: $ftd.set-bool($a = $logo-lists.mouse-in, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $logo-lists.mouse-in, v = false)
-background.solid: $inherited.colors.background.step-1
+background.solid: $inherited.colors.background.step-2
 border-color: $inherited.colors.background.base
 border-width.px:1
 border-radius.px: 6
@@ -2417,6 +2438,7 @@ border-radius.px: 6
 -- ftd.image:
 src: $logo-lists.logo
 max-width.fixed.px: 132
+max-width.fixed.px if { ftd.device == "mobile"}: 92
 height.fixed.px: 32
 link: $logo-lists.link
 
@@ -2429,11 +2451,61 @@ link: $logo-lists.link
 
 
 
+-- component hero-with-image:
+caption title:
+string help-info:
+body body:
+ftd.image-src image:
+string cta-primary: I'm a Talent
+string cta-primary-url: index.html
+string cta-secondary: I'm a Business
+string cta-secondary-url: index.html
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.desktop:
+
+-- hero-with-image-desktop: $hero-with-image.title
+help-info: $hero-with-image.help-info
+image: $hero-with-image.image
+cta-primary: $hero-with-image.cta-primary
+cta-primary-url: $hero-with-image.cta-primary-url
+cta-secondary: $hero-with-image.cta-secondary
+cta-secondary-url: $hero-with-image.cta-secondary-url
+
+$hero-with-image.body
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- hero-with-image-mobile: $hero-with-image.title
+help-info: $hero-with-image.help-info
+image: $hero-with-image.image
+cta-primary: $hero-with-image.cta-primary
+cta-primary-url: $hero-with-image.cta-primary-url
+cta-secondary: $hero-with-image.cta-secondary
+cta-secondary-url: $hero-with-image.cta-secondary-url
+
+$hero-with-image.body
+
+-- end: ftd.mobile
+
+-- end: ftd.column
+
+-- end: hero-with-image
 
 
 
 
--- component hero-section:
+
+
+
+
+
+
+-- component hero-with-image-desktop:
 caption title:
 string help-info:
 body body:
@@ -2458,24 +2530,25 @@ max-width.fixed.px: 1240
 -- ftd.column:
 width.fixed.percent: 60
 
--- ftd.text: $hero-section.help-info
+-- ftd.text: $hero-with-image-desktop.help-info
 role: $inherited.types.copy-small
 style: medium
 margin-bottom.px: 12
 
--- ftd.text: $hero-section.title
+-- ftd.text: $hero-with-image-desktop.title
 role: $inherited.types.heading-hero
 style: medium
 margin-bottom.px: 24
 
--- ftd.text: $hero-section.body
+-- ftd.text: $hero-with-image-desktop.body
 role: $inherited.types.copy-regular
 margin-bottom.px: 40
 
 -- ftd.row:
 spacing.fixed.px: 16
+role: $inherited.types.blockquote
 
--- ftd.text: $hero-section.cta-primary
+-- ftd.text: $hero-with-image-desktop.cta-primary
 padding-vertical.px: 12
 padding-horizontal.px: 32
 border-radius.px: 6
@@ -2484,7 +2557,7 @@ border-width.px: 1
 border-color: $inherited.colors.background.base
 background.solid: $inherited.colors.background.base
 
--- ftd.text: $hero-section.cta-secondary
+-- ftd.text: $hero-with-image-desktop.cta-secondary
 padding-vertical.px: 12
 padding-horizontal.px: 32
 border-radius.px: 6
@@ -2501,7 +2574,7 @@ background.solid: $inherited.colors.background.step-2
 width.fixed.percent: 40
 
 -- ftd.image:
-src: $hero-section.image
+src: $hero-with-image-desktop.image
 width: fill-container
 height: fill-container
 
@@ -2511,13 +2584,84 @@ height: fill-container
 
 -- end: ftd.column
 
--- end: hero-section
+-- end: hero-with-image-desktop
 
 
 
 
 
 
+
+-- component hero-with-image-mobile:
+caption title:
+string help-info:
+body body:
+ftd.image-src image:
+string cta-primary: I'm a Talent
+string cta-primary-url: index.html
+string cta-secondary: I'm a Business
+string cta-secondary-url: index.html
+
+-- ftd.column:
+background.solid: $inherited.colors.background.step-1
+width: fill-container
+
+-- ftd.row:
+padding-top.px: 100
+padding-bottom.px: 40
+color: $inherited.colors.text-strong
+spacing.fixed.px: 64
+align-self: center
+max-width.fixed.px: 1240
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.text: $hero-with-image-mobile.help-info
+role: $inherited.types.copy-small
+style: medium
+margin-bottom.px: 12
+
+-- ftd.text: $hero-with-image-mobile.title
+role: $inherited.types.heading-hero
+style: medium
+margin-bottom.px: 24
+
+-- ftd.text: $hero-with-image-mobile.body
+role: $inherited.types.copy-regular
+margin-bottom.px: 40
+
+-- ftd.text: $hero-with-image-mobile.cta-primary
+padding-vertical.px: 12
+padding-horizontal.px: 32
+border-radius.px: 6
+color: $inherited.colors.background.step-1
+border-width.px: 1
+border-color: $inherited.colors.background.base
+background.solid: $inherited.colors.background.base
+role: $inherited.types.blockquote
+width: fill-container
+text-align: center
+margin-bottom.px: 24
+
+-- ftd.text: $hero-with-image-mobile.cta-secondary
+padding-vertical.px: 12
+padding-horizontal.px: 32
+border-radius.px: 6
+color: $inherited.colors.background.base
+border-width.px: 1
+border-color: $inherited.colors.background.base
+background.solid: $inherited.colors.background.step-2
+role: $inherited.types.blockquote
+width: fill-container
+text-align: center
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: hero-with-image-mobile
 
 
 
@@ -2533,7 +2677,7 @@ background.solid: $inherited.colors.custom.one
 width: fill-container
 color: $inherited.colors.text-strong
 padding-vertical.px: 120
-
+padding-horizontal.px if { ftd.device == "mobile" }: 24
 -- ftd.column:
 max-width.fixed.px: 1240
 align-self: center
@@ -2544,6 +2688,7 @@ role: $inherited.types.copy-small
 margin-bottom.px: 24
 
 -- ftd.row:
+if: { ftd.device != "mobile" }
 spacing.fixed.px: 26
 margin-bottom.px: 20
 
@@ -2559,6 +2704,22 @@ width.fixed.percent: 32
 
 -- end: ftd.row
 
+-- ftd.column:
+if: { ftd.device == "mobile" }
+spacing.fixed.px: 26
+margin-bottom.px: 20
+
+-- ftd.text: $pricings.title
+role: $inherited.types.heading-hero
+style: medium
+width: fill-container
+
+-- ftd.text: $pricings.body
+role: $inherited.types.copy-regular
+margin-top.px: 24
+width: fill-container
+
+-- end: ftd.column
 -- ftd.column:
 width: fill-container
 spacing.fixed.px: 23
@@ -2759,6 +2920,7 @@ align-self: center
 -- end: ftd.column
 
 -- ftd.image:
+if: { ftd.device != "mobile" }
 src: $nav.image
 border-radius.px: 6
 border-color: $inherited.colors.background.base
@@ -2913,11 +3075,46 @@ role: $inherited.types.blockquote
 
 
 
-
-
-
-
 -- component feature-section:
+caption title: 
+string help-info: 
+ftd.image-src image: 
+body body:
+children container:
+
+-- ftd.column:
+width: fill-container
+
+
+-- ftd.desktop:
+
+-- feature-section-desktop: $feature-section.title
+help-info: $feature-section.title
+image: $feature-section.image
+container: $feature-section.container
+
+$feature-section.body
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- feature-section-mobile: $feature-section.title
+help-info: $feature-section.title
+image: $feature-section.image
+container: $feature-section.container
+
+$feature-section.body
+
+-- end: ftd.mobile
+
+-- end: ftd.column
+
+-- end: feature-section
+
+
+
+-- component feature-section-desktop:
 caption title: 
 string help-info: 
 ftd.image-src image: $assets.files.static.record.svg
@@ -2940,7 +3137,7 @@ align-self: center
 width.fixed.percent: 30
 
 -- ftd.image:
-src: $feature-section.image
+src: $feature-section-desktop.image
 width: fill-container
 
 -- end: ftd.column
@@ -2948,12 +3145,12 @@ width: fill-container
 -- ftd.column:
 width.fixed.percent: 70
 
--- ftd.text: $feature-section.help-info
+-- ftd.text: $feature-section-desktop.help-info
 role: $inherited.types.copy-small
 margin-bottom.px: 12
 
 
--- ftd.text: $feature-section.title
+-- ftd.text: $feature-section-desktop.title
 role: $inherited.types.heading-hero
 margin-bottom.px: 24
 style: medium
@@ -2963,10 +3160,10 @@ role: $inherited.types.copy-regular
 margin-bottom.px: 40
 style: light
 
-$feature-section.body
+$feature-section-desktop.body
 
 -- ftd.column:
-children: $feature-section.container
+children: $feature-section-desktop.container
 spacing.fixed.px: 40
 
 -- end: ftd.column
@@ -2977,7 +3174,52 @@ spacing.fixed.px: 40
 
 -- end: ftd.column
 
--- end: feature-section
+-- end: feature-section-desktop
+
+
+
+
+
+
+-- component feature-section-mobile:
+caption title: 
+string help-info: 
+ftd.image-src image: $assets.files.static.record.svg
+body body:
+children container:
+
+-- ftd.column:
+background.solid: $inherited.colors.background.step-2
+padding-vertical.px: 72
+padding-horizontal.px: 24
+color: $inherited.colors.text-strong
+width: fill-container
+
+-- ftd.text: $feature-section-mobile.help-info
+role: $inherited.types.copy-small
+margin-bottom.px: 12
+
+-- ftd.text: $feature-section-mobile.title
+role: $inherited.types.heading-hero
+margin-bottom.px: 24
+style: medium
+
+-- ftd.text: 
+role: $inherited.types.copy-regular
+margin-bottom.px: 40
+style: light
+
+$feature-section-mobile.body
+
+-- ftd.column:
+children: $feature-section-mobile.container
+spacing.fixed.px: 40
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: feature-section-mobile
 
 
 
@@ -2988,7 +3230,11 @@ spacing.fixed.px: 40
 common.feature list feature-list: 
 optional caption title:
 
+-- ftd.column:
+width: fill-container
+
 -- ftd.row:
+if: { ftd.device != " mobile" }
 width: fill-container
 wrap: true
 spacing.fixed.px: 40
@@ -3000,6 +3246,19 @@ $loop$: $feature-content.feature-list as $obj
 
 -- end: ftd.row
 
+-- ftd.column:
+if: { ftd.device == " mobile" }
+width: fill-container
+
+-- feature-card-list: $obj.title
+icon: $obj.icon
+body: $obj.body
+$loop$: $feature-content.feature-list as $obj
+
+-- end: ftd.column
+
+-- end: ftd.column
+
 -- end: feature-content
 
 
@@ -3009,8 +3268,10 @@ ftd.image-src icon:
 body body:
 
 -- ftd.row:
-width.fixed.percent: 45
+width.fixed.percent if { ftd.device != "mobile" }: 45
+width: fill-container
 spacing.fixed.px: 12
+
 -- ftd.image:
 src: $feature-card-list.icon
 border-radius.px: 100
@@ -3039,9 +3300,44 @@ style: light
 -- end: feature-card-list
 
 
-
-
 -- component faqs:
+caption title:
+body body:
+string help-info:
+string cta-primary:
+string cta-primary-link: index.html
+string further-support: Need further support?
+common.faq list faqs-list: 
+
+-- ftd.column:
+
+-- ftd.desktop:
+
+-- faqs-desktop: $faqs.title
+help-info: $faqs.help-info
+cta-primary: $faqs.cta-primary
+cta-primary-link: $faqs.cta-primary-link
+further-support: $faqs.further-support
+faqs-list: $faqs.faqs-list
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- faqs-mobile: $faqs.title
+help-info: $faqs.help-info
+cta-primary: $faqs.cta-primary
+cta-primary-link: $faqs.cta-primary-link
+further-support: $faqs.further-support
+faqs-list: $faqs.faqs-list
+
+-- end: ftd.mobile
+
+-- end: ftd.column
+
+-- end: faqs
+
+-- component faqs-desktop:
 caption title:
 body body:
 string help-info:
@@ -3063,11 +3359,11 @@ align-self: center
 
 -- ftd.column:
 
--- ftd.text: $faqs.help-info
+-- ftd.text: $faqs-desktop.help-info
 role: $inherited.types.copy-small
 margin-bottom.px: 10
 
--- ftd.text: $faqs.title
+-- ftd.text: $faqs-desktop.title
 role: $inherited.types.heading-hero
 margin-bottom.px: 24
 style: medium
@@ -3076,23 +3372,23 @@ style: medium
 role: $inherited.types.copy-regular
 margin-bottom.px: 52
 
-$faqs.body
+$faqs-desktop.body
 
 -- ftd.row:
 width: fill-container
 spacing.fixed.px: 32
 align-content: center
 
--- ftd.text: $faqs.further-support
+-- ftd.text: $faqs-desktop.further-support
 role: $inherited.types.copy-small
 
--- ftd.text: $faqs.cta-primary
+-- ftd.text: $faqs-desktop.cta-primary
 padding-vertical.px: 10
 padding-horizontal.px: 32
 border-radius.px: 6
 color: $inherited.colors.background.step-1
 background.solid: $inherited.colors.background.base
-link: $faqs.cta-primary-link
+link: $faqs-desktop.cta-primary-link
 
 -- end: ftd.row
 
@@ -3101,8 +3397,8 @@ link: $faqs.cta-primary-link
 -- ftd.column:
 width: fill-container
 
--- faqs-list-detail:
-$loop$: $faqs.faqs-list as $obj
+-- faqs-desktop-list-detail:
+$loop$: $faqs-desktop.faqs-list as $obj
 title: $obj.title
 body: $obj.body
 
@@ -3112,7 +3408,7 @@ body: $obj.body
 
 -- end: ftd.column
 
--- end: faqs
+-- end: faqs-desktop
 
 
 

@@ -181,6 +181,8 @@ link: $obj.url
 is-active: $obj.is-active
 children: $obj.children
 parent-id: header-wrap
+description: $obj.description 
+img-src: $obj.img-src
 
 -- end: ftd.row
 
@@ -358,7 +360,9 @@ color: $inherited.colors.text
 -- component header-item:
 caption title:
 optional ftd.image-src icon:
+optional ftd.image-src img-src:
 optional string link:
+optional string description:
 boolean is-active: 
 boolean $open: false
 pr.toc-item list children:
@@ -402,7 +406,7 @@ z-index: 999
 top.px: 124
 left.px: 274
 anchor.id: $header-item.parent-id
-$on-click-outside$: $ftd.set-bool($a = $header-item.mouse-in, v = false)
+
 
 -- ftd.column:
 width: fill-container
@@ -437,6 +441,14 @@ min-height.fixed.px: 500
 -- ftd.text: $header-item.title
 link: $header-item.link
 role: $inherited.types.heading-small
+
+-- ftd.text: $header-item.description
+if: { header-item.description != NULL }
+link: $header-item.link
+role: $inherited.types.heading-small
+
+-- ftd.image: $header-item.img-src
+if: { header-item.img-src != NULL }
 
 -- end: ftd.column
 

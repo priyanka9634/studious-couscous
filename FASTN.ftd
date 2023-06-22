@@ -31,8 +31,9 @@ exposing: h0, h1, h2, h3, markdown
 
 # Home: /
 url: why-fastn/
-cta: hello
-body: lorem
+img-src: static/hero.svg
+icon: heep
+description: helpp
 
 ## home-section: /
 
