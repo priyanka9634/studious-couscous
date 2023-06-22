@@ -3,9 +3,25 @@
 -- fastn.package: priyanka9634.github.io/studious-couscous
 favicon: /-/priyanka9634.github.io/studious-couscous/favicon.ico
 
-
--- fastn.dependency: fastn-community.github.io/doc-site
+-- fastn.dependency: fastn-community.github.io/midnight-rush-typography as typo
+-- fastn.dependency: priyanka9634.github.io/suspicous as cs
+-- fastn.dependency: fastn-community.github.io/midnight-rush as ds
 -- fastn.dependency: fastn-community.github.io/footer
+-- fastn.dependency: fastn-community.github.io/opensans-font 
+-- fastn.dependency: fastn-community.github.io/dark-mode-switcher
+-- fastn.dependency: fastn-community.github.io/code-block
+-- fastn.dependency: fastn-community.github.io/typography
+-- fastn.dependency: fastn.com
+-- fastn.dependency: fastn-community.github.io/footer
+
+-- fastn.auto-import: fastn-community.github.io/code-block as cb
+exposing: code, rendered
+
+-- fastn.auto-import: fastn-community.github.io/typography as tf
+exposing: h0, h1, h2, h3, markdown
+
+
+-- fastn.auto-import: ds
 
 -- fastn.auto-import: priyanka9634.github.io/studious-couscous/FASTN/ds
 -- fastn.auto-import: priyanka9634.github.io/studious-couscous/assets
@@ -14,5 +30,14 @@ favicon: /-/priyanka9634.github.io/studious-couscous/favicon.ico
 -- fastn.sitemap:
 
 # Home: /
+url: why-fastn/
+cta: hello
+body: lorem
 
-- Right Sidebar Sample: /sidebar/
+## home-section: /
+
+
+
+
+
+
