@@ -22,10 +22,6 @@ export: code, rendered
 
 
 
--- integer $current-slide: 1
-
--- integer $current-tab: 1
-
 -- page:
 full-width: true
 
@@ -1059,14 +1055,14 @@ link: $footer-loop-mobile.url
 
 -- ftd.image:
 if: { footer-loop-mobile.shows-data }
-src: $assets.files.assets.down.svg
+src: $assets.files.static.down.svg
 width.fixed.px: 16
 $on-click$: $ftd.toggle($a= $footer-loop-mobile.shows-data)
 align-self: center
 
 -- ftd.image:
 if: { !footer-loop-mobile.shows-data }
-src: $assets.files.assets.drop-down.svg
+src: $assets.files.static.drop-down.svg
 width.fixed.px: 16
 $on-click$: $ftd.toggle($a= $footer-loop-mobile.shows-data)
 align-self: center
