@@ -55,7 +55,6 @@ logo-height: $common.logo-height
 footer-links: $common.footer-links
 social-links: $common.social-links
 
-
 -- end: ds.page.footer
 
 -- ftd.column:

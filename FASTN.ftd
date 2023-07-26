@@ -30,56 +30,56 @@ exposing: h0, h1, h2, h3, markdown
 -- fastn.sitemap:
 
 # Home: 
-url:/
-nav-title: kdf
-img-src: static/hero.svg
-icon: heep
-description: A new connection protocol for modern talents to connect with businesses globally.
+  url: /dashboard/
+  nav-title: kdf
+  img-src: static/hero.svg
+  icon: heep
+  description: A new connection protocol for modern.
 
 ## home-section: 
-url:/
-img-src: static/agency-of-record.svg
-description: A new connection protocol for modern talents to connect with businesses globally.
+  url: /home/
+  img-src: static/agency-of-record.svg
+  description: A new connection protocol for modern.
 
 ## home-section-1: 
-url:/
-img-src: static/agency-of-record.svg
-description: A new connection protocol for modern talents to connect with businesses globally.
+  url: /home-1/
+  img-src: static/agency-of-record.svg
+  description: A new connection protocol for modern.
 
 ## home-section-2: 
-url:/
-img-src: static/agency-of-record.svg
-description: A new connection protocol for modern talents to connect with businesses globally.
+  url: /home-2/
+  img-src: static/agency-of-record.svg
+  description: A new connection protocol for modern.
 
 
-# for business: 
-url:/
-nav-title: kdf
-img-src: static/hero.svg
-icon: heep
-description: A new connection protocol for modern talents to connect with businesses globally.
+# For Business:
+  url: /business/
+  nav-title: kdf
+  img-src: static/hero.svg
+  icon: heep
+  description: A new connection protocol for modern.
 
 
 
-# pricing: 
-url:/
-nav-title: kdf
-img-src: static/hero.svg
-icon: heep
-description: A new connection protocol for modern talents to connect with businesses globally.
+# Pricing:
+  url: /pricing/
+  nav-title: kdf
+  img-src: static/hero.svg
+  icon: heep
+  description: A new connection protocol for modern.
 
 
-# for collabrate: 
-url:/
-nav-title: kdf
-img-src: static/hero.svg
-icon: heep
-description: A new connection protocol for modern talents to connect with businesses globally.
+# for Collabration:
+  url: /collaboration/
+  nav-title: kdf
+  img-src: static/hero.svg
+  icon: heep
+  description: A new connection protocol for modern.
 
 
-# resolurces: 
-url:/
-nav-title: kdf
-img-src: static/hero.svg
-icon: heep
-description: A new connection protocol for modern talents to connect with businesses globally.
+# Resources:
+  url: /resources/
+  nav-title: kdf
+  img-src: static/hero.svg
+  icon: heep
+  description: A new connection protocol for modern.
