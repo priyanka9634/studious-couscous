@@ -1,0 +1,666 @@
+-- import: fastn/processors as pr
+-- import: priyanka9634.github.io/studious-couscous/assets
+-- import: fastn-community.github.io/midnight-rush/blog-authors/patrica as author
+
+
+-- boolean show-footer: true
+
+-- integer logo-width: 180
+
+-- integer logo-height: 44
+
+-- string site-name: SET 1 DS
+
+-- string site-url: index.html
+
+-- ftd.image-src site-logo: $assets.files.static.ipsum-logo.svg
+
+-- integer max-width: 1280
+
+-- pr.sitemap-data sitemap:
+$processor$: pr.full-sitemap
+
+-- pr.sitemap-data footer-toc:
+$processor$: pr.full-sitemap
+
+
+-- pr.toc-item list footer-list:
+$processor$: pr.toc
+
+-- fastn.app-ui apps:
+$processor$: pr.fastn-apps
+
+
+
+
+
+-- record social-media:
+ftd.image-src src:
+string link: /
+
+
+
+
+
+-- social-media list share:
+
+
+
+
+
+
+-- social-media list share-links:
+
+-- social-media:
+link: /
+src: $assets.files.static.meta.svg
+
+-- social-media: 
+link: /
+src: $assets.files.static.figma.svg
+
+-- social-media:
+link: /
+src: $assets.files.static.google.svg
+
+-- social-media: 
+link: /
+src: $assets.files.static.ball.svg
+
+-- end: share-links
+
+
+
+
+
+-- social-media list social-links:
+
+-- social-media:
+link: /
+src: $assets.files.static.meta.svg
+
+-- social-media: 
+link: /
+src: $assets.files.static.figma.svg
+
+-- social-media:
+link: /
+src: $assets.files.static.google.svg
+
+-- social-media: 
+link: /
+src: $assets.files.static.tweak.svg
+
+-- social-media: 
+link: /
+src: $assets.files.static.ball.svg
+
+-- end: social-links
+
+
+
+
+
+-- ftd.color blur:
+light: #12080880
+dark: #12080880
+
+
+
+
+
+
+-- pr.toc-item list footer-links:
+$processor$: pr.toc
+
+- Terms and condition: index.html
+- Privacy Policy: index.html
+
+
+
+
+
+
+-- record tags-list:
+caption title:
+string tag-link:
+
+
+
+
+
+-- tags-list list topic:
+
+-- tags-list: Design Inspiration
+tag-link: blog/
+
+-- end: topic
+
+
+
+
+
+-- tags-list list tags:
+
+-- tags-list: Programming
+tag-link: blog/
+
+-- tags-list: Data Science
+tag-link: blog/
+
+-- tags-list: Technology
+tag-link: blog/
+
+-- tags-list: Writing
+tag-link: blog/
+
+-- tags-list: AI/ML
+tag-link: blog/
+
+-- tags-list: UI/UX
+tag-link: blog/
+
+-- end: tags
+
+
+
+
+
+
+-- record author-meta:
+caption title:
+string profile:
+string company:
+optional string bio-url:
+optional ftd.image-src image:
+body body:
+
+
+
+
+
+-- record post-meta:
+caption title:
+string published-on:
+optional ftd.image-src post-image:
+optional body body:
+string post-url:
+author-meta author:
+social-media list social-list:
+tags-list list tags:
+
+
+
+
+
+
+
+-- ftd.shadow section-shadow:
+color: rgba(0, 62, 57, .3)
+x-offset.px: 0
+y-offset.px: 1
+inset: false
+spread.px: 1
+blur.px: 3
+
+
+
+
+
+-- ftd.background-image bg-image: 
+src: $assets.files.static.post-article.jpg
+repeat: no-repeat
+
+
+
+
+
+-- string list work-list:
+
+-- string: Global Invoicing
+
+-- string: Payment Collection
+
+-- string: Borderless Banking
+
+-- string: Tax Assistance
+
+-- end: work-list
+
+
+
+
+
+
+
+
+
+
+-- record logos:
+ftd.image-src logo:
+string link:
+
+
+
+
+
+
+
+
+
+
+
+-- record pricing:
+caption title:
+integer index:
+pricing-feature list pricing-feature-list:
+
+
+
+
+
+
+
+
+
+-- record pricing-feature:
+caption title:
+ftd.image-src icon:
+ftd.image-src image:
+string cta-primary:
+string cta-primary-url:
+body body:
+string list feature-list:
+
+
+
+
+
+
+
+
+-- record story:
+integer index:
+testimonial list testimonial-list:
+
+
+-- record testimonial:
+caption title:
+string profile:
+body body:
+integer index:
+
+
+
+
+
+
+
+
+-- void increment-and-clamp(a,by,min,max):
+integer $a:
+integer by: 1
+integer min: 0
+integer max: 5
+
+
+a = (((a - min) + by) % (max - min)) + min
+
+
+
+
+
+-- record social-media:
+ftd.image-src src:
+string link: /
+
+-- social-media list share:
+
+
+
+
+
+-- record tags-list:
+caption title:
+string tag-link:
+
+-- tags-list list tag:
+
+-- tags-list list topic:
+
+-- tags-list: Design Inspiration
+tag-link: blog/
+
+-- end: topic
+
+
+
+
+-- author-meta patrica: Patrica AVA
+profile: UI Designer
+bio-url:  blog-authors/patrica/
+image: $assets.files.static.avatar.svg
+company: XVY Pvt. Ltd.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+
+
+-- post-meta meta: eu risus nulla. Aliquam erat volutp nullam vitae ex id justo modo facilisis.
+published-on: July 22, 2014 at 10:02 pm
+post-image: $assets.files.static.image.svg
+post-url: blog-articles/sample-post/
+author: $patrica
+social-list: $social-links
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
+doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore 
+
+
+
+
+
+
+
+-- ftd.shadow feature-content-shadow:
+color: #013e39
+x-offset.px: 3
+y-offset.px: 3
+inset: false
+
+
+
+
+
+
+
+
+
+
+
+
+-- record feature:
+caption title:
+ftd.image-src icon:
+body body:
+
+
+
+
+-- record faq:
+caption title: 
+optional body body:
+
+
+
+-- ftd.shadow logo-shadow:
+color: #013e39
+x-offset.px: 6
+y-offset.px: 8
+inset: false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- faq list list-of-faqs:
+
+-- faq: Are there really zero fees?
+
+At Fastn, we believe businesses shouldn’t have to wait or pay to access money
+they’ve already earned. That’s why it doesn’t cost a penny to create an account
+and there are zero transaction fees when you use the Fastn platform to pay and
+get paid. If you decide to leverage some of our more premium payment features
+(like Fastn Flow, which lets you get paid before your client pays you) there
+may be a small service fee—
+
+-- faq: Is Fastn secure?
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie ante
+in luctus rutrum.
+
+-- faq: Does Fastn replace my accounting software?
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie ante
+in luctus rutrum.
+
+-- faq: Is Fastn a bank?
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie ante
+in luctus rutrum.
+
+-- faq: Are the payments really instant?
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie ante
+in luctus rutrum.
+
+-- faq: Do my clients and vendors have to sign up for Fastn too?
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie ante
+in luctus rutrum.
+
+-- faq: How does Fastn make money?
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie ante
+in luctus rutrum.
+
+-- end: list-of-faqs
+
+-- logos list list-of-logos:
+
+-- logos: 
+logo: $assets.files.static.techonolgy.png
+link: landing/
+
+-- logos: 
+logo: $assets.files.static.techonolgy.png
+link: landing/
+
+-- logos: 
+logo: $assets.files.static.techonolgy.png
+link: landing/
+
+-- logos: 
+logo: $assets.files.static.techonolgy.png
+link: landing/
+
+-- end: list-of-logos
+
+
+
+
+
+
+-- string list work-list:
+
+-- string: Global Invoicing
+
+-- string: Payment Collection
+
+-- string: Borderless Banking
+
+-- string: Tax Assistance
+
+-- end: work-list
+
+
+
+-- pricing list pricing-list:
+
+-- pricing: For Talents
+index: 1
+pricing-feature-list: $pricing-feature-list
+
+-- pricing: For Businesses
+index: 2
+pricing-feature-list: $pricing-feature-list-1
+
+-- end: pricing-list
+
+
+
+
+
+
+
+
+
+
+
+-- pricing-feature list pricing-feature-list:
+
+-- pricing-feature: Agency of Record
+icon: $assets.files.static.agency-of-record.svg
+image: $assets.files.static.agency-record.svg
+cta-primary: Explore AOR
+cta-primary-url: /
+feature-list: $feature-list-1
+
+Invoice your clients across 120 countries compliantly and get paid without having to set up a legal entity.
+
+-- pricing-feature: Agency of Record
+icon: $assets.files.static.agency-of-record.svg
+image: $assets.files.static.agency-record.svg
+cta-primary: Explore AOR
+cta-primary-url: /
+feature-list: $feature-list-1
+
+Invoice your clients across 120 countries compliantly and get paid without having to set up a legal entity.
+
+-- pricing-feature: Agency of Record
+icon: $assets.files.static.agency-of-record.svg
+image: $assets.files.static.agency-record.svg
+cta-primary: Explore AOR
+cta-primary-url: /
+feature-list: $feature-list-1
+
+Invoice your clients across 120 countries compliantly and get paid without having to set up a legal entity.
+
+-- pricing-feature: Agency of Record
+icon: $assets.files.static.agency-of-record.svg
+image: $assets.files.static.agency-record.svg
+cta-primary: Explore AOR
+cta-primary-url: /
+feature-list: $feature-list-1
+
+Invoice your clients across 120 countries compliantly and get paid without having to set up a legal entity.
+
+-- end: pricing-feature-list
+
+
+
+
+
+
+-- pricing-feature list pricing-feature-list-1:
+
+-- pricing-feature: Agency of Record
+icon: $assets.files.static.agency-of-record.svg
+image: $assets.files.static.agency-record.svg
+cta-primary: Explore AOR
+cta-primary-url: /
+feature-list: $feature-list-1
+
+Invoice your clients across 120 countries compliantly and get paid without having to set up a legal entity.
+
+-- pricing-feature: Agency of Record
+icon: $assets.files.static.agency-of-record.svg
+image: $assets.files.static.agency-record.svg
+cta-primary: Explore AOR
+cta-primary-url: /
+feature-list: $feature-list-1
+
+Invoice your clients across 120 countries compliantly and get paid without having to set up a legal entity.
+
+-- end: pricing-feature-list-1 
+
+
+
+
+
+
+
+
+
+-- string list feature-list-1:
+
+
+-- string: Secure payment processing
+
+-- string: Flexible pay-out options
+
+-- string: 140+ currencies
+
+-- string: Get paid within 1 business day
+
+-- end: feature-list-1
+
+
+
+
+
+
+
+
+-- testimonial list testimonial-list:
+
+-- testimonial: patrica
+profile: Designer
+index: 1
+
+Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
+we are able to solve these problems with their great products.sj
+
+
+-- testimonial: patrica
+profile: Designer
+index: 2
+
+Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
+we are able to solve these problems with their great products.sj
+
+
+-- testimonial: Yash
+profile: Designer
+index: 3
+
+Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
+we are able to solve these problems with their great products.sj
+
+
+-- testimonial: Yash
+profile: Designer
+index: 4
+
+Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
+we are able to solve these problems with their great products.sj
+
+
+-- testimonial: Aniket
+profile: Designer
+index: 5
+
+Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
+we are able to solve these problems with their great products.sj
+
+
+-- testimonial: Aniket
+profile: Designer
+index: 6
+
+Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
+we are able to solve these problems with their great products.sj
+
+-- end: testimonial-list
+
+

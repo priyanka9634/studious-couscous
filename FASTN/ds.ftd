@@ -1,9 +1,18 @@
 -- import: fastn-community.github.io/footer
--- import: fastn-community.github.io/doc-site/common
--- import: fastn-community.github.io/doc-site
+-- import: priyanka9634.github.io/studious-couscous/common
+-- import: priyanka9634.github.io/studious-couscous as ds
+-- import: priyanka9634.github.io/suspicous as cs
+
 export: markdown,h0,h1,h2,h3,code,rendered,output,image,iframe,youtube,compact-text,post,posts,featured-post,image-first,image-in-between,without-image,author-bio,tip,not-found-1,not-found-2,link,link-group
 
--- common.site-logo site-logo: $assets.files.assets.ipsum-logo.svg
+
+-- common.site-logo site-logo: $assets.files.static.ipsum-logo.svg
+
+
+
+
+
+
 
 -- component page:
 children wrapper:
@@ -18,8 +27,10 @@ optional string site-name: fastn template
 optional ftd.image-src site-logo: $site-logo
 boolean github-icon: false
 optional string github-url: 
+ftd.color-scheme colors: $cs.main
+boolean full-width: false
 
--- doc-site.page: $page.title
+-- ds.page: $page.title
 site-name: $page.site-name
 site-logo: $page.site-logo
 body: $page.body
@@ -31,18 +42,21 @@ document-description: $page.document-description
 document-image: $page.document-image
 github-url: $page.github-url
 github-icon: $page.github-icon
+colors: $page.colors
+full-width: $page.full-width
 
--- doc-site.page.footer:
+-- ds.page.footer:
 
--- footer.social-sideline-footer:
-social: true
-site-logo: $site-logo
-site-url: index.html
-twitter-url: https://twitter.com/FifthTryHQ
-discord-url: https://discord.gg/bucrdvptYd
-copyright: Copyright © 2023 - [FifthTry.com](https://www.fifthtry.com/)
+-- ds.footer:
+site-logo: $common.site-logo
+site-url: $common.site-url 
+logo-width: $common.logo-width
+logo-height: $common.logo-height
+footer-links: $common.footer-links
+social-links: $common.social-links
 
--- end: doc-site.page.footer
+
+-- end: ds.page.footer
 
 -- ftd.column:
 spacing.fixed.em: 0.8
@@ -51,6 +65,6 @@ children: $page.wrapper
 
 -- end: ftd.column
 
--- end: doc-site.page
+-- end: ds.page
 
 -- end: page

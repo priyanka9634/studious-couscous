@@ -1,18 +1,85 @@
 -- import: fastn
 
--- fastn.package: <user_name>.github.io/<repo_name>
-favicon: /-/<user_name>.github.io/<repo_name>/favicon.ico
+-- fastn.package: priyanka9634.github.io/studious-couscous
+favicon: /-/priyanka9634.github.io/studious-couscous/favicon.ico
 
-
--- fastn.dependency: fastn-community.github.io/doc-site
+-- fastn.dependency: fastn-community.github.io/midnight-rush-typography as typo
+-- fastn.dependency: priyanka9634.github.io/suspicous as cs
+-- fastn.dependency: fastn-community.github.io/midnight-rush as ds
+-- fastn.dependency: fastn-community.github.io/footer
+-- fastn.dependency: fastn-community.github.io/opensans-font 
+-- fastn.dependency: fastn-community.github.io/dark-mode-switcher
+-- fastn.dependency: fastn-community.github.io/code-block
+-- fastn.dependency: fastn-community.github.io/typography
+-- fastn.dependency: fastn.com
 -- fastn.dependency: fastn-community.github.io/footer
 
--- fastn.auto-import: <user_name>.github.io/<repo_name>/FASTN/ds
--- fastn.auto-import: <user_name>.github.io/<repo_name>/assets
+-- fastn.auto-import: fastn-community.github.io/code-block as cb
+exposing: code, rendered
+
+-- fastn.auto-import: fastn-community.github.io/typography as tf
+exposing: h0, h1, h2, h3, markdown
+
+
+-- fastn.auto-import: ds
+
+-- fastn.auto-import: priyanka9634.github.io/studious-couscous/FASTN/ds
+-- fastn.auto-import: priyanka9634.github.io/studious-couscous/assets
 
 
 -- fastn.sitemap:
 
-# Home: /
+# Home: 
+url:/
+nav-title: kdf
+img-src: static/hero.svg
+icon: heep
+description: A new connection protocol for modern talents to connect with businesses globally.
 
-- Right Sidebar Sample: /sidebar/
+## home-section: 
+url:/
+img-src: static/agency-of-record.svg
+description: A new connection protocol for modern talents to connect with businesses globally.
+
+## home-section-1: 
+url:/
+img-src: static/agency-of-record.svg
+description: A new connection protocol for modern talents to connect with businesses globally.
+
+## home-section-2: 
+url:/
+img-src: static/agency-of-record.svg
+description: A new connection protocol for modern talents to connect with businesses globally.
+
+
+# for business: 
+url:/
+nav-title: kdf
+img-src: static/hero.svg
+icon: heep
+description: A new connection protocol for modern talents to connect with businesses globally.
+
+
+
+# pricing: 
+url:/
+nav-title: kdf
+img-src: static/hero.svg
+icon: heep
+description: A new connection protocol for modern talents to connect with businesses globally.
+
+
+# for collabrate: 
+url:/
+nav-title: kdf
+img-src: static/hero.svg
+icon: heep
+description: A new connection protocol for modern talents to connect with businesses globally.
+
+
+# resolurces: 
+url:/
+nav-title: kdf
+img-src: static/hero.svg
+icon: heep
+description: A new connection protocol for modern talents to connect with businesses globally.
