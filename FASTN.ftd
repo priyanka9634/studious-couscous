@@ -29,16 +29,57 @@ exposing: h0, h1, h2, h3, markdown
 
 -- fastn.sitemap:
 
-# Home: /
+# Home: 
 url: why-fastn/
+nav-title: kdf
 img-src: static/hero.svg
 icon: heep
-description: helpp
+description: A new connection protocol for modern talents to connect with businesses globally.
 
-## home-section: /
+## home-section: 
+url: why-fastn/
+img-src: static/agency-of-record.svg
+description: A new connection protocol for modern talents to connect with businesses globally.
+
+## home-section-1: 
+url: why-fastn/
+img-src: static/agency-of-record.svg
+description: A new connection protocol for modern talents to connect with businesses globally.
+
+## home-section-2: 
+url: why-fastn/
+img-src: static/agency-of-record.svg
+description: A new connection protocol for modern talents to connect with businesses globally.
+
+
+# for business: 
+url: why-fastn/
+nav-title: kdf
+img-src: static/hero.svg
+icon: heep
+description: A new connection protocol for modern talents to connect with businesses globally.
 
 
 
+# pricing: 
+url: why-fastn/
+nav-title: kdf
+img-src: static/hero.svg
+icon: heep
+description: A new connection protocol for modern talents to connect with businesses globally.
 
 
+# for collabrate: 
+url: why-fastn/
+nav-title: kdf
+img-src: static/hero.svg
+icon: heep
+description: A new connection protocol for modern talents to connect with businesses globally.
 
+
+# resolurces: 
+url: why-fastn/
+nav-title: kdf
+img-src: static/hero.svg
+icon: heep
+description: A new connection protocol for modern talents to connect with businesses globally.

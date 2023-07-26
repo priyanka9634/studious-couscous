@@ -15,7 +15,7 @@
 
 -- ftd.image-src site-logo: $assets.files.static.ipsum-logo.svg
 
--- integer max-width: 1320
+-- integer max-width: 1280
 
 -- pr.sitemap-data sitemap:
 $processor$: pr.full-sitemap
@@ -288,6 +288,7 @@ testimonial list testimonial-list:
 caption title:
 string profile:
 body body:
+integer index:
 
 
 
@@ -642,10 +643,14 @@ Invoice your clients across 120 countries compliantly and get paid without havin
 
 
 
+
+
+
 -- testimonial list testimonial-list:
 
 -- testimonial: patrica
 profile: Designer
+index: 1
 
 Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
 we are able to solve these problems with their great products.sj
@@ -653,67 +658,43 @@ we are able to solve these problems with their great products.sj
 
 -- testimonial: patrica
 profile: Designer
+index: 2
 
 Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
 we are able to solve these problems with their great products.sj
 
+
+-- testimonial: Yash
+profile: Designer
+index: 3
+
+Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
+we are able to solve these problems with their great products.sj
+
+
+-- testimonial: Yash
+profile: Designer
+index: 4
+
+Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
+we are able to solve these problems with their great products.sj
+
+
+-- testimonial: Aniket
+profile: Designer
+index: 5
+
+Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
+we are able to solve these problems with their great products.sj
+
+
+-- testimonial: Aniket
+profile: Designer
+index: 6
+
+Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
+we are able to solve these problems with their great products.sj
 
 -- end: testimonial-list
 
-
-
-
--- testimonial list testimonial-list-1:
-
--- testimonial: Yash
-profile: Designer
-
-Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
-we are able to solve these problems with their great products.sj
-
-
--- testimonial: Yash
-profile: Designer
-
-Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
-we are able to solve these problems with their great products.sj
-
-
--- end: testimonial-list-1
-
-
-
--- testimonial list testimonial-list-2:
-
--- testimonial: Aniket
-profile: Designer
-
-Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
-we are able to solve these problems with their great products.sj
-
-
--- testimonial: Aniket
-profile: Designer
-
-Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
-we are able to solve these problems with their great products.sj
-
--- end: testimonial-list-2
-
--- story list stories:
-
--- story:
-index: 1
-testimonial-list: $testimonial-list
-
--- story:
-index:3
-testimonial-list: $testimonial-list-1
-
-
--- story:
-index: 2
-testimonial-list: $testimonial-list-2
-
--- end: stories
 

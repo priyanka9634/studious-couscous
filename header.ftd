@@ -137,7 +137,6 @@ optional string github-url:
 -- ftd.column:
 width: fill-container
 background.solid: $inherited.colors.background.step-1
-padding-horizontal.px: 40
 id: header-wrap
 
 -- ftd.row:
@@ -366,7 +365,7 @@ optional string description:
 boolean is-active: 
 boolean $open: false
 pr.toc-item list children:
-boolean $mouse-in: true
+boolean $mouse-in: false
 optional string parent-id:
 
 -- ftd.row: 
@@ -375,55 +374,45 @@ align-self: center
 -- ftd.row:
 
 -- ftd.text: $header-item.title
-if: { !header-item.is-active }
-role: $fonts.copy-regular
+role: $inherited.types.heading-tiny
 link if { header-item.link != NULL}: $header-item.link
 white-space: nowrap
 color: $inherited.colors.text
-
--- ftd.text: $header-item.title
-if: { header-item.is-active }
-role: $inherited.types.copy-regular
-white-space: nowrap
-link if { header-item.link != NULL }: $header-item.link
-color: $inherited.colors.text-strong
-style: bold
+color if { header-item.mouse-in }: $inherited.colors.text-strong
+style: medium
 
 -- ftd.image:
 src: $assets.files.static.header-up.svg
 src if { header-item.mouse-in }: $assets.files.static.header-down.svg
 $on-click$: $ftd.toggle($a = $header-item.mouse-in)
+align-self: center
+padding-top.px: 2
 
 -- end: ftd.row
-
--- ftd.boolean: $header-item.mouse-in
 
 -- ftd.column:
 if: { header-item.mouse-in }
 min-width.fixed.px: 753
-min-height.fixed.px: 500
+min-height.fixed.px: 400
 z-index: 999
 top.px: 124
 left.px: 274
 anchor.id: $header-item.parent-id
 
-
 -- ftd.column:
-width: fill-container
+width.fixed.percent: 80
 background.solid: $inherited.colors.background.step-2
 border-radius.px: 12
 min-width.fixed.px: 800
-min-height.fixed.px: 500
+min-height.fixed.px: 400
 shadow: $common.section-shadow
 border-width.px: 1
 border-color: $inherited.colors.background.base
 
 -- ftd.row:
-width: fill-container
-spacing.fixed.px: 60
+width.fixed.percent: 80
 z-index: 111
 border-radius.px: 12
-color: $inherited.colors.text-strong
 
 -- ftd.column:
 border-top-left-radius.px: 12
@@ -434,21 +423,24 @@ border-right-width.px: 1
 border-color: $inherited.colors.background.base
 padding-vertical.px: 32 
 padding-horizontal.px: 42 
-min-height.fixed.px: 500
+min-height.fixed.px: 400
 
 -- ftd.column:
+spacing.fixed.px: 28
+link: $header-item.link
+color: $inherited.colors.text
 
 -- ftd.text: $header-item.title
-link: $header-item.link
 role: $inherited.types.heading-small
 
 -- ftd.text: $header-item.description
 if: { header-item.description != NULL }
-link: $header-item.link
-role: $inherited.types.heading-small
+role: $inherited.types.fine-print
 
 -- ftd.image: $header-item.img-src
 if: { header-item.img-src != NULL }
+width: fill-container
+
 
 -- end: ftd.column
 
@@ -456,19 +448,19 @@ if: { header-item.img-src != NULL }
 
 -- ftd.column:
 width: fill-container
-spacing.fixed.px: 12
-min-width.fixed.px: 400
-min-height.fixed.px: 500
+min-width.fixed.px: 500
+min-height.fixed.px: 400
 padding-vertical.px: 32 
 padding-horizontal.px: 42 
+spacing.fixed.px: 32
 
--- ftd.text: helo
-if: { ftd.is_empty(header-item.children) }
 
 -- loop-section-card: $obj.title
 if: { !ftd.is_empty(header-item.children) }
 $loop$: $header-item.children as $obj
 link: $obj.url
+description: $obj.description
+icon: $obj.img-src
 is-active: $obj.is-active
 
 -- end: ftd.column
@@ -494,20 +486,34 @@ is-active: $obj.is-active
 caption title:
 boolean is-active: false
 string link:
-string parent-id: ncg
-
+string parent-id: hhg
+ftd.image-src icon:
+string description:
 
 -- ftd.row:
 width: fill-container
 spacing.fixed.px: 12
 align-self: center
+link: $loop-section-card.link
+
+-- ftd.image:
+src: $loop-section-card.icon
+
+-- ftd.column:
+color: $inherited.colors.text
 
 -- ftd.text: $loop-section-card.title
-link: $loop-section-card.link
-role: $inherited.types.copy-small
-color: $inherited.colors.text-strong
+role: $inherited.types.heading-tiny
+color: $inherited.colors.text
 white-space: nowrap
-align-self: center
+style: bold
+
+-- ftd.text: $loop-section-card.description
+role: $inherited.types.copy-small
+
+
+
+-- end: ftd.column
 
 -- end: ftd.row
 
