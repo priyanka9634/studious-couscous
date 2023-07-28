@@ -395,7 +395,7 @@ if: { header-item.mouse-in }
 min-width.fixed.px: 753
 min-height.fixed.px: 400
 z-index: 999
-top.px: 124
+top.px: 104
 left.px: 274
 anchor.id: $header-item.parent-id
 
@@ -448,7 +448,7 @@ width: fill-container
 
 -- ftd.column:
 width: fill-container
-min-width.fixed.px: 500
+min-width.fixed.px: 400
 min-height.fixed.px: 400
 padding-vertical.px: 32 
 padding-horizontal.px: 42 

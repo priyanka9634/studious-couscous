@@ -22,7 +22,7 @@ export: code, rendered
 -- integer $current-slide: 1
 
 
--- page:
+-- ds.page:
 full-width: true
 
 -- hero-with-image: The infrastructure of modern work
@@ -96,7 +96,7 @@ faqs-list: $list-of-faqs
 -- search-card: Freakishly simple. Downright useful. Ready to make the jump?
 help-info: Sign up in 2 minutes
 
--- end: page
+-- end: ds.page
 
 
 
@@ -845,11 +845,11 @@ pr.toc-item list footer-list:
 common.social-media list social-links: 
 
 -- ftd.column:
-border-color: $inherited.colors.border
+border-color: $inherited.colors.background.base
 border-top-width.px: 1
 width: fill-container
 align-content: center
-background.solid: $inherited.colors.background.base
+background.solid: $inherited.colors.background.step-1
 color: $inherited.colors.text
 
 -- ftd.row:
@@ -902,7 +902,7 @@ $loop$: $footer-desktop.footer-list as $obj
 -- end: ftd.row
 
 -- ftd.row:
-border-color: $inherited.colors.background.step-1
+border-color: $inherited.colors.background.base
 border-top-width.px: 1
 padding-top.px: 32
 max-width.fixed.percent: 85
@@ -2444,11 +2444,11 @@ width: fill-container
 color: $inherited.colors.text
 align-self: center
 
-
 -- ftd.column:
 background.solid: $inherited.colors.background.step-2
 padding.px: 40
 width.fixed.percent: 50
+width if { ftd.device == "mobile" }: fill-container
 border-radius.px: 10
 border-color: $inherited.colors.background.base
 
@@ -2544,6 +2544,7 @@ background.solid: $inherited.colors.background.step-2
 padding.px: 40
 border-radius.px: 10
 width.fixed.percent: 50
+width if { ftd.device == "mobile" }: fill-container
 border-color: $inherited.colors.background.base
 
 -- ftd.image:
