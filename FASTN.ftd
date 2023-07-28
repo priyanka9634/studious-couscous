@@ -51,7 +51,7 @@ exposing: h0, h1, h2, h3, markdown
 
 
 # For Business
-  url: /business/
+  url: index.html
   img-src: static/hero.svg
   description: A new connection protocol for modern talents.
 
@@ -95,7 +95,7 @@ exposing: h0, h1, h2, h3, markdown
 
 
 # for Collabration
-  url: /collaboration/
+  url: index.html
   img-src: static/hero.svg
   description: A new connection protocol for modern talents.
 
@@ -116,7 +116,7 @@ exposing: h0, h1, h2, h3, markdown
   description: A new connection protocol for modern talents.
 
 # Resources
-  url: /resources/
+  url: index.html
   img-src: static/hero.svg
   description: A new connection protocol for modern talents.
 
