@@ -29,58 +29,110 @@ exposing: h0, h1, h2, h3, markdown
 
 -- fastn.sitemap:
 
-
-# Home: 
-  url: /
-  nav-title: kdf
+# Home
+  url: index.html
   img-src: static/hero.svg
-  icon: heep
-  description: A new connection protocol for modern.
+  description: A new connection protocol for modern talents.
 
-## home-section: 
-  url: /
+## section
+  url: index.html
   img-src: static/agency-of-record.svg
-  description: A new connection protocol for modern.
+  description: A new connection protocol for modern talents.
 
-## home-section-1: 
-  url: /
+## section-1
+  url: index.html
   img-src: static/agency-of-record.svg
-  description: A new connection protocol for modern.
+  description: A new connection protocol for modern talents.
 
-## home-section-2: 
-  url: /
+## section-2
+  url: index.html
   img-src: static/agency-of-record.svg
-  description: A new connection protocol for modern.
+  description: A new connection protocol for modern talents.
 
 
-# For Business:
-  url: /
-  nav-title: kdf
+# For Business
+  url: index.html
   img-src: static/hero.svg
-  icon: heep
-  description: A new connection protocol for modern.
+  description: A new connection protocol for modern talents.
 
 
+## section
+  url: index.html
+  img-src: static/agency-of-record.svg
+  description: A new connection protocol for modern talents.
 
-# Pricing:
+## section-1
+  url: index.html
+  img-src: static/agency-of-record.svg
+  description: A new connection protocol for modern talents.
+
+## section-2
+  url: index.html
+  img-src: static/agency-of-record.svg
+  description: A new connection protocol for modern talents.
+
+
+# Pricing
   url: /
-  nav-title: kdf
   img-src: static/hero.svg
-  icon: heep
-  description: A new connection protocol for modern.
+  description: A new connection protocol for modern talents.
 
 
-# for Collabration:
-  url: /
-  nav-title: kdf
+## section
+  url: index.html
+  img-src: static/agency-of-record.svg
+  description: A new connection protocol for modern talents.
+
+## section-1
+  url: index.html
+  img-src: static/agency-of-record.svg
+  description: A new connection protocol for modern talents.
+
+## section-2
+  url: index.html
+  img-src: static/agency-of-record.svg
+  description: A new connection protocol for modern talents.
+
+
+# for Collabration
+  url: index.html
   img-src: static/hero.svg
-  icon: heep
-  description: A new connection protocol for modern.
+  description: A new connection protocol for modern talents.
 
 
-# Resources:
-  url: /
-  nav-title: kdf
+## section
+  url: index.html
+  img-src: static/agency-of-record.svg
+  description: A new connection protocol for modern talents.
+
+## section-1
+  url: index.html
+  img-src: static/agency-of-record.svg
+  description: A new connection protocol for modern talents.
+
+## section-2
+  url: index.html
+  img-src: static/agency-of-record.svg
+  description: A new connection protocol for modern talents.
+
+# Resources
+  url: index.html
   img-src: static/hero.svg
-  icon: heep
-  description: A new connection protocol for modern.
+  description: A new connection protocol for modern talents.
+
+
+## section
+  url: index.html
+  img-src: static/agency-of-record.svg
+  description: A new connection protocol for modern talents.
+
+## section-1
+  url: index.html
+  img-src: static/agency-of-record.svg
+  description: A new connection protocol for modern talents.
+
+## section-2
+  url: index.html
+  img-src: static/agency-of-record.svg
+  description: A new connection protocol for modern talents.
+
