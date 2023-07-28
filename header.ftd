@@ -381,12 +381,15 @@ color: $inherited.colors.text
 color if { header-item.mouse-in }: $inherited.colors.text-strong
 style: medium
 
+
 -- ftd.image:
-src: $assets.files.static.header-up.svg
-src if { header-item.mouse-in }: $assets.files.static.header-down.svg
+src: $assets.files.static.drop-down.svg
+src if { header-item.mouse-in }: $assets.files.static.drop-up.svg
 $on-click$: $ftd.toggle($a = $header-item.mouse-in)
 align-self: center
-padding-top.px: 2
+padding-top.px: 6
+padding-left.px: 4
+width.fixed.px: 14
 
 -- end: ftd.row
 
