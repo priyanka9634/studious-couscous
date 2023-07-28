@@ -19,7 +19,7 @@ export: code, rendered
 
 
 
-
+-- integer $current-slide: 1
 
 
 -- page:
@@ -37,7 +37,7 @@ Engineering new ways of connecting talents and organizations to enhance their
 financial performance and simplify compliance.
 
 -- logo-cloud:  Trusted by the top companies in this industry
-logo-list: $common.list-of-logos
+logo-list: $list-of-logos
 
 -- content: Built for the next generation of small business
 
@@ -49,32 +49,35 @@ image: $assets.files.static.agency-record.svg
 link: landing/
 cta-primary: Sign me up
 cta-primary-link: index.html
+feature-list: $feature-list
 
 Pay and get paid like never before. Auto-generate promo-banners, send reminders, schedule payments, and instantly access money when someone pays you.
 Pay and get paid like never before. Auto-generate promo-banners, send reminders, schedule payments, and instantly access money when someone pays you.
-Pay and get paid like never before. Auto-generate promo-banners, send reminders, schedule 
+
 
 -- hero-image-left: Better cash control with our flow
 image: $assets.files.static.payments.svg
 link: landing/
 cta-primary: Sign me up
 cta-primary-link: index.html
+feature-list: $feature-list
 
 Pay and get paid like never before. Auto-generate promo-banners, send reminders, schedule payments, and instantly access money when someone pays you.
 Pay and get paid like never before. Auto-generate promo-banners, send reminders, schedule payments, and instantly access money when someone pays you.
-Pay and get paid like never before. Auto-generate promo-banners, send reminders, schedule
+
 
 -- hero-image-right: Smart dashboard, powerful integrations
 image: $assets.files.static.landing.smart_dashboard.png
 link: landing/
 cta-primary: Sign me up
 cta-primary-link: index.html
+feature-list: $feature-list
 
 Our dashboard is simple to navigate and packed with useful features. It also integrates seamlessly with accounting platforms like Quickbooks.
 
 -- testimonials-card: Why they love fastn
 help-info: user testimonials
-testimonials: $common.testimonial-list
+testimonials: $testimonial-list
 
 -- banner-card: See how much faster you can get paid with fastn
 info-cards: $list-of-info-cards
@@ -94,7 +97,6 @@ faqs-list: $list-of-faqs
 help-info: Sign up in 2 minutes
 
 -- end: page
-
 
 
 
@@ -327,39 +329,6 @@ $banner-card-list.body
 
 -- end: banner-card-list
 
-
-
-
-
-
-
-
-
-
-
--- record info-card:
-caption title:
-body body:
-boolean is-first: false
-boolean is-last: false
-
--- info-card list list-of-info-cards:
-
--- info-card: +87%
-is-first: true
-
-increased attendee engagement of Bitwise
-
--- info-card: 1.7M
-
-pipeline generated at Everbridge
-
--- info-card: 58%
-is-last: true
-
-attendee conversion rate at Interfolio
-
--- end: list-of-info-cards
 
 
 
@@ -953,7 +922,6 @@ role: $inherited.types.copy-small
 margin-horizontal.px: 24
 $loop$: $footer-desktop.footer-links as $obj
 
-
 -- end: ftd.row
 
 -- ftd.row:
@@ -970,10 +938,13 @@ link: $obj.link
 
 -- end: ftd.row
 
-
 -- end: ftd.column
 
 -- end: footer-desktop
+
+
+
+
 
 
 
@@ -1023,6 +994,15 @@ sub-sections: $footer-loop.sub-sections
 -- end: ftd.column
 
 -- end: footer-loop
+
+
+
+
+
+
+
+
+
 
 -- component footer-loop-mobile:
 caption title:
@@ -2058,487 +2038,10 @@ width: fill-container
 
 
 
-
-
-
-
-
--- component post-article:
-common.post-meta post-data:
-string cta-primary:
-string cta-primary-link:
-
--- post-article-ui: $post-article.post-data.title
-timestamp: $post-article.post-data.published-on
-image: $post-article.post-data.post-image
-link:  $post-article.post-data.post-url
-author: $post-article.post-data.author
-cta-primary: $post-article.cta-primary
-cta-primary-link: $post-article.cta-primary-link
-
--- end: post-article
-
-
-
-
-
-
-
-
-
-
--- component post-article-ui:
-caption title:
-string timestamp:
-ftd.image-src image: 
-string link:
-common.author-meta author:
-string cta-primary: Read More
-string cta-secondary: Discover blog
-string cta-primary-link: index.html
-
--- ftd.row:
-background.image: $common.bg-image
-padding.px: 32
-spacing: space-between
-width: fill-container
-border-color: $inherited.colors.background.base
-border-width.px: 1
-border-radius.px: 12
-overflow: hidden
-
--- ftd.column:
-background.solid: $inherited.colors.background.step-2
-padding.px: 32
-border-color: $inherited.colors.background.base
-border-width.px: 1
-border-radius.px: 12
-width.fixed.percent: 40
-
--- ftd.text: $post-article-ui.title
-role: $inherited.types.heading-medium
-style: regular
-margin-bottom.px: 40
-
--- ftd.row:
-spacing.fixed.px: 8
-
--- ftd.image:
-src: $post-article-ui.author.image
-
--- ftd.column:
-
--- ftd.text: $post-article-ui.author.title
-role: $inherited.types.fine-print
-
--- ftd.text: $post-article-ui.timestamp
-role: $inherited.types.fine-print
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: ftd.column
-
--- ftd.row:
-spacing.fixed.px: 24
-
--- ftd.text: $post-article-ui.cta-primary
-padding-vertical.px: 12
-padding-horizontal.px: 32
-border-radius.px: 6
-color: $inherited.colors.background.step-1
-border-width.px: 1
-border-color: $inherited.colors.background.base
-background.solid: $inherited.colors.background.base
-
--- ftd.text: $post-article-ui.cta-secondary
-padding-vertical.px: 12
-padding-horizontal.px: 32
-border-radius.px: 6
-color: $inherited.colors.background.base
-border-width.px: 1
-border-color: $inherited.colors.background.base
-background.solid: $inherited.colors.background.step-1
-
--- end: ftd.row
-
-
--- end: ftd.row
-
--- end: post-article-ui
-
-
-
-
-
-
-
-
-
-
-
-
--- component post:
-string cta-placeholder: enter your email
-string cta-primary: subscribe
-string cta-primary-link: /
-string help-info:
-caption title:
-body body:
-string verification: i am not robot
-children container:
-
--- ftd.column:
-width: fill-container
-background.solid: $inherited.colors.background.step-2
-padding-vertical.px: 120
-color: $inherited.colors.text-strong
-
--- ftd.column:
-max-width.fixed.px: 1240
-align-self: center
-width: fill-container
-
--- ftd.row:
-margin-bottom.px: 40
-spacing.fixed.px: 48
--- ftd.column:
-width.fixed.percent: 60
-
--- ftd.text: $post.title
-role: $inherited.types.heading-hero
-style: medium
-margin-bottom.px: 40
-
--- ftd.text: $post.body
-role: $inherited.types.copy-regular
-
--- end: ftd.column
-
--- ftd.column:
-width.fixed.percent: 40
-
--- ftd.row:
-border-radius.px: 6
-border-color: $inherited.colors.background.base
-padding.px: 8
-border-width.px: 1
-width: fill-container
-margin-top.px: 90
-spacing.fixed.px: 48
-
--- ftd.text-input:
-placeholder: $post.cta-placeholder
-background.solid: $inherited.colors.background.step-2
-padding-vertical.px: 12
-padding-horizontal.px: 32
-width: fill-container
-
--- ftd.text: $post.cta-primary
-padding-vertical.px: 12
-padding-horizontal.px: 32
-border-radius.px: 6
-color: $inherited.colors.background.step-1
-border-width.px: 1
-border-color: $inherited.colors.background.base
-background.solid: $inherited.colors.background.base
-
--- end: ftd.row
-
--- ftd.text: $post.help-info
-role: $inherited.types.copy-small
-width.fixed.percent: 65
-align-self: end
-
--- end: ftd.column
-
--- end: ftd.row
-
--- ftd.column:
-children: $post.container
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: post
-
-
-
-
-
-
-
-
-
--- component work-section:
-string help-info:
-caption title:
-body body:
-children container:
-
--- ftd.column:
-background.solid: $inherited.colors.background.base
-color: $inherited.colors.text
-padding-vertical.px: 120
-padding-horizontal.px if { ftd.device == "mobile" }: 24
-width: fill-container
-
--- ftd.column:
-max-width.fixed.px: 1240
-align-self: center
-width: fill-container
-
--- ftd.text: $work-section.help-info
-role: $inherited.types.copy-small
-margin-bottom.px: 24
-style: medium
-
--- ftd.row:
-if: { ftd.device != "mobile"}
-margin-bottom.px: 100
-spacing.fixed.px: 32
-
--- ftd.text: $work-section.title
-role: $inherited.types.heading-hero
-width.fixed.percent: 70
-style: medium
-
--- ftd.text:
-role: $inherited.types.copy-regular
-width.fixed.percent: 60
-margin-top.px: 40
-
-$work-section.body
-
--- end: ftd.row
-
--- ftd.column:
-margin-bottom.px: 100
-spacing.fixed.px: 32
-if: { ftd.device == "mobile"}
-
--- ftd.text: $work-section.title
-role: $inherited.types.heading-hero
-width: fill-container
-style: medium
-
--- ftd.text:
-role: $inherited.types.copy-regular
-width: fill-container
-margin-top.px: 12
-
-$work-section.body
-
--- end: ftd.column
-
--- ftd.row:
-if: { ftd.device != "mobile" }
-children: $work-section.container
-width: fill-container
-spacing.fixed.px: 68
-
--- end: ftd.row
-
--- ftd.column:
-if: { ftd.device == "mobile" }
-children: $work-section.container
-width: fill-container
-spacing.fixed.px: 68
-
--- end: ftd.column
-
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: work-section
-
-
-
-
-
-
-
-
-
-
-
--- component work:
-caption title:
-string explored:
-string users:
-string cta-primary:
-string cta-primary-link:
-ftd.image-src icon:
-body body:
-string list work-list:
-
--- ftd.column:
-width.fixed.percent if { ftd.device != "mobile" }:48
-width: fill-container
-padding-vertical.px: 60
-padding-horizontal.px: 40
-background.solid: $inherited.colors.background.step-2
-color: $inherited.colors.text-strong
-border-radius.px: 10
-align-content: center
-
--- ftd.image:
-src: $work.icon
-border-radius.px: 6
-border-color: $inherited.colors.background.base
-shadow: $common.feature-content-shadow
-padding.px: 12
-border-width.px: 1
-align-self: center
-margin-bottom.px: 40
-
--- ftd.text: $work.title
-role: $inherited.types.heading-hero
-margin-bottom.px: 4
-
--- ftd.text: $work.explored
-role: $inherited.types.copy-small
-
--- ftd.text: 
-margin-top.px: 40
-border-radius.px: 6
-border-color: $inherited.colors.background.base
-border-width.px: 1
-padding.px: 20
-role: $inherited.types.heading-tiny
-style: regular
-
-$work.body
-
--- ftd.row:
-wrap: true
-margin-top.px: 40
-spacing.fixed.px: 24
-max-width.fixed.percent: 80
-align-self: center
-
--- work-loop: $obj
-$loop$: $work.work-list as $obj
-
--- end: ftd.row
-
--- ftd.row:
-margin-top.px: 40
-width: fill-container
-spacing.fixed.px: 24
-background.solid: $inherited.colors.background.base
-border-radius.px: 6
-padding.px: 12
-align-content: center
-
--- ftd.text: $work.cta-primary
-role: $inherited.types.copy-small
-color: $inherited.colors.text
-
--- ftd.image:
-src: $assets.files.static.arrow.svg
-width.fixed.px: 24
-height.fixed.px: 24
-align-self: center
-
--- end: ftd.row
-
--- ftd.text: $work.users
-margin-top.px: 20
-role: $inherited.types.copy-small
-style: light
-
--- end: ftd.column
-
--- end: work
-
-
-
-
-
-
-
-
-
-
--- component work-loop:
-caption title:
-
--- ftd.row:
-width.fixed.percent if { ftd.device != "mobile" }:45
-width: fill-container
-spacing.fixed.px: 4
-
--- ftd.image: 
-src: $assets.files.static.tick.svg
-
--- ftd.text: $work-loop.title
-role: $inherited.types.copy-small
-
--- end: ftd.row
-
--- end: work-loop
-
-
-
-
-
-
-
-
-
-
--- component tip:
-optional caption title:
-body body:
-
--- ftd.row:
-background.solid: $inherited.colors.custom.one
-padding.px: 20
-border-color: $inherited.colors.background.base
-border-radius.px: 6
-border-width.px: 1
-spacing.fixed.px: 24
-
--- ftd.image:
-src: $assets.files.static.tip.svg
-background.solid: $inherited.colors.background.base
-border-radius.px: 100
-padding.px: 4
-align-self: center
-
--- ftd.column:
-
--- ftd.text: 
-role: $inherited.types.blockquote
-
-$tip.body
-
--- end: ftd.column
-
--- end: ftd.row
-
--- end: tip
-
-
-
-
-
-
-
-
-
-
 -- component logo-cloud:
 optional caption title:
 optional body body:
-common.logos list logo-list:
+logos list logo-list:
 
 -- ftd.column:
 width: fill-container
@@ -2575,7 +2078,7 @@ logo-list: $logo-cloud.logo-list
 -- component logo-cloud-desktop:
 optional caption title:
 optional body body:
-common.logos list logo-list:
+logos list logo-list:
 
 -- ftd.column:
 padding-bottom.px: 120
@@ -2626,7 +2129,7 @@ link: $obj.link
 -- component logo-cloud-mobile:
 optional caption title:
 optional body body:
-common.logos list logo-list:
+logos list logo-list:
 
 -- ftd.column:
 spacing.fixed.px: 52
@@ -2692,6 +2195,9 @@ link: $logo-lists.link
 -- end: ftd.row
 
 -- end: logo-lists
+
+
+
 
 
 
@@ -2928,7 +2434,7 @@ string cta-primary:
 string link:
 string cta-primary-link:
 body body:
-string list feature-list: $common.feature-list-1
+string list feature-list: 
 
 -- ftd.row:
 margin-bottom.px: 40
@@ -2936,13 +2442,13 @@ spacing.fixed.px: 40
 max-width.fixed.px: $common.max-width
 width: fill-container
 color: $inherited.colors.text
-align-content: center
 align-self: center
-max-height.fixed.px: 550
+
 
 -- ftd.column:
 background.solid: $inherited.colors.background.step-2
 padding.px: 40
+width.fixed.percent: 50
 border-radius.px: 10
 border-color: $inherited.colors.background.base
 
@@ -2971,7 +2477,7 @@ $loop$: $hero-image-right.feature-list as $obj
 -- end: ftd.row
 
 -- ftd.row:
-margin-top.px: 40
+margin-top.px: 56
 width: fill-container
 spacing.fixed.px: 24
 background.solid: $inherited.colors.background.base
@@ -2999,6 +2505,7 @@ src: $hero-image-right.image
 border-radius.px: 6
 border-color: $inherited.colors.background.base
 border-width.px: 1
+width.fixed.percent: 50
 
 -- end: ftd.row
 
@@ -3015,11 +2522,12 @@ string cta-primary:
 string cta-primary-link:
 string link:
 body body:
-string list feature-list: $common.feature-list-1
+string list feature-list: 
 
 -- ftd.row:
 margin-bottom.px: 40
 spacing.fixed.px: 40
+width: fill-container
 
 -- ftd.image:
 if: { ftd.device != "mobile" }
@@ -3028,12 +2536,14 @@ border-radius.px: 6
 border-color: $inherited.colors.background.base
 border-width.px: 1
 align-self: center
-margin-bottom.px: 40
+width.fixed.percent: 50
+height: fill-container
 
 -- ftd.column:
 background.solid: $inherited.colors.background.step-2
 padding.px: 40
 border-radius.px: 10
+width.fixed.percent: 50
 border-color: $inherited.colors.background.base
 
 -- ftd.image:
@@ -3044,7 +2554,6 @@ border-color: $inherited.colors.background.step-1
 shadow: $common.feature-content-shadow
 padding.px: 12
 border-width.px: 1
-margin-bottom.px: 40
 
 -- ftd.text: $hero-image-left.title
 role: $inherited.types.heading-large
@@ -3066,12 +2575,13 @@ max-width.fixed.percent: 100
 align-self: center
 
 -- work-loop: $obj
+if: { !ftd.is_empty(hero-image-left.feature-list) }
 $loop$: $hero-image-left.feature-list as $obj
 
 -- end: ftd.row
 
 -- ftd.row:
-margin-top.px: 40
+margin-top.px: 56
 width: fill-container
 spacing.fixed.px: 24
 background.solid: $inherited.colors.background.base
@@ -3103,7 +2613,33 @@ align-self: center
 
 
 
--- integer $current-slide: 1
+
+
+-- component work-loop:
+caption title:
+
+-- ftd.row:
+width.fixed.percent if { ftd.device != "mobile" }:45
+width: fill-container
+spacing.fixed.px: 4
+
+-- ftd.image: 
+src: $assets.files.static.tick.svg
+align-self: center
+
+-- ftd.text: $work-loop.title
+role: $inherited.types.copy-small
+
+-- end: ftd.row
+
+-- end: work-loop
+
+
+
+
+
+
+
 
 
 -- component testimonials-card:
@@ -3112,7 +2648,7 @@ string help-info:
 integer min: 1
 integer max: 10
 integer $active-item: 1
-common.testimonial list testimonials:
+testimonial list testimonials:
 
 -- ftd.column:
 width: fill-container
@@ -3144,13 +2680,15 @@ testimonials: $testimonials-card.testimonials
 
 
 
+
+
 -- component testimonials-card-desktop:
 caption title:
 string help-info:
 integer min: 1
 integer max: 10
 integer $active-item: 1
-common.testimonial list testimonials:
+testimonial list testimonials:
 
 -- ftd.column:
 padding-vertical.px: 120
@@ -3224,13 +2762,17 @@ $loop$: $testimonials-card-desktop.testimonials as $obj
 
 
 
+
+
+
+
 -- component testimonials-card-mobile:
 caption title:
 string help-info:
 integer min: 1
 integer max: 10
 integer $active-item: 1
-common.testimonial list testimonials:
+testimonial list testimonials:
 
 -- ftd.column:
 padding-vertical.px: 120
@@ -3295,6 +2837,7 @@ $loop$: $testimonials-card-mobile.testimonials as $obj
 
 
 
+
 -- component testimonial-loop:
 caption title:
 string profile:
@@ -3323,8 +2866,12 @@ role: $inherited.types.blockquote
 
 -- end: ftd.column
 
-
 -- end: testimonial-loop
+
+
+
+
+
 
 
 
@@ -3339,7 +2886,6 @@ children container:
 
 -- ftd.column:
 width: fill-container
-
 
 -- ftd.desktop:
 
@@ -3366,6 +2912,13 @@ $feature-section.body
 -- end: ftd.column
 
 -- end: feature-section
+
+
+
+
+
+
+
 
 
 
@@ -3516,6 +3069,14 @@ $loop$: $feature-content.features as $obj
 -- end: ftd.column
 
 -- end: feature-content
+
+
+
+
+
+
+
+
 
 
 -- component feature-card-list:
@@ -4030,24 +3591,23 @@ margin-vertical.px: 50
 padding-top.px: 69
 padding-bottom.px: 65
 padding-horizontal.px: 75
-background.solid: $inherited.colors.custom.four
+background.solid: $inherited.colors.text
 border-radius.px: 20
 align-content: center
 spacing: space-between
+color: $inherited.colors.background.step-1
 
 -- ftd.column:
 width: fill-container
 
 -- ftd.text: $search-card-desktop.title
 role: $inherited.types.heading-small
-color: $inherited.colors.text-strong
 padding-right.px: 16
 margin-bottom.px: 18
 
 -- ftd.text:
 if: { search-card-desktop.body != NULL }
 role: $inherited.types.copy-regular
-color: $inherited.colors.text-strong
 
 $search-card-desktop.body
 
@@ -4070,8 +3630,8 @@ width.fixed.px: 310
 role: $inherited.types.link
 min-width.fixed.px: 87
 text-align: center
-color: $inherited.colors.text-strong
-background.solid: $inherited.colors.cta-primary.base
+color: $inherited.colors.text
+background.solid: $inherited.colors.background.step-1
 padding-vertical.px: 13
 padding-horizontal.px: 28
 link if { search-card-desktop.cta-primary-link != NULL }: $search-card-desktop.cta-primary-link
@@ -4090,7 +3650,6 @@ src: $search-card-desktop.info-icon
 
 -- ftd.text: $search-card-desktop.help-info
 role: $inherited.types.label-small
-color: $inherited.colors.text-strong
 
 -- end: ftd.row
 
@@ -4281,8 +3840,13 @@ link: landing/
 We are an award-winning strategic design company that provides consultancy
 services and help you create outstanding digital products.
 
-
 -- end: list-of-features
+
+
+
+
+
+
 
 
 
@@ -4397,3 +3961,153 @@ $features-card-details.body
 
 
 
+
+
+
+
+
+
+-- string list feature-list:
+
+
+-- string: Secure payment processing
+
+-- string: Flexible pay-out options
+
+-- string: 140+ currencies
+
+-- string: Get paid within 1 business day
+
+-- end: feature-list
+
+
+
+
+
+
+
+
+-- testimonial list testimonial-list:
+
+-- testimonial: patrica
+profile: Designer
+index: 1
+
+Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
+we are able to solve these problems with their great products.sj
+
+
+-- testimonial: patrica
+profile: Designer
+index: 2
+
+Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
+we are able to solve these problems with their great products.sj
+
+
+-- testimonial: Yash
+profile: Designer
+index: 3
+
+Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
+we are able to solve these problems with their great products.sj
+
+
+-- testimonial: Yash
+profile: Designer
+index: 4
+
+Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
+we are able to solve these problems with their great products.sj
+
+
+-- testimonial: Aniket
+profile: Designer
+index: 5
+
+Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
+we are able to solve these problems with their great products.sj
+
+
+-- testimonial: Aniket
+profile: Designer
+index: 6
+
+
+Invoicing and payments are the most challenging parts of working with freelancers. Thanks to Ruul,
+we are able to solve these problems with their great products.sj
+
+-- end: testimonial-list
+
+
+
+
+-- record testimonial:
+caption title:
+string profile:
+body body:
+integer index:
+
+
+
+
+
+-- record logos:
+ftd.image-src logo:
+string link:
+
+
+
+
+-- logos list list-of-logos:
+
+-- logos: 
+logo: $assets.files.static.techonolgy.png
+link: landing/
+
+-- logos: 
+logo: $assets.files.static.techonolgy.png
+link: landing/
+
+-- logos: 
+logo: $assets.files.static.techonolgy.png
+link: landing/
+
+-- logos: 
+logo: $assets.files.static.techonolgy.png
+link: landing/
+
+-- end: list-of-logos
+
+
+
+
+
+
+
+
+
+
+-- record info-card:
+caption title:
+body body:
+boolean is-first: false
+boolean is-last: false
+
+-- info-card list list-of-info-cards:
+
+-- info-card: +87%
+is-first: true
+
+increased attendee engagement of Bitwise
+
+-- info-card: 1.7M
+
+pipeline generated at Everbridge
+
+-- info-card: 58%
+is-last: true
+
+attendee conversion rate at Interfolio
+
+-- end: list-of-info-cards
